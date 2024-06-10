@@ -1,14 +1,19 @@
+import { BedIcon } from "lucide-react";
 import "./App.css";
 import Button from "./Button";
+import { useRef } from "react";
 
 function App() {
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  console.log("buttonRef", buttonRef);
   return (
     <>
       {/* <Hi /> */}
-      {/* <Button className="px-8" type="button">
-        Hello Planted 🌳
-      </Button> */}
-      <Bye />
+      <Button type="button" variant="success" size="icon" ref={buttonRef}>
+        <BedIcon className="size-5" />
+      </Button>
+      {/* <Bye /> */}
     </>
   );
 }
